@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>000</title>
+</head>
+
+<body>
+    <br>
+    <br>
+    <center>
+        <h1>Database Testing</h1>
+    <br>
+    <br>
+    <% if(typeof ip !== 'undefined') {%>
+    <h2><%= ip %></h2>
+    <%}%>
+    <br>
+    <br>
+</center>
+    <section class="container-between">
+        <form action="/saveuser" method="POST" class="form" id="regForm" novalidate>
+            <div>
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" placeholder="4-12 character" />
+                    <small class="helper-text"></small>
+                </div>
+    
+                <div class="input-group">
+                    <label for="username">Valami1</label>
+                    <input type="text" name="valami1" id="valami1" placeholder="4-12 character" />
+                    <small class="helper-text"></small>
+                </div>
+    
+                <div class="input-group">
+                    <label for="username">Valami2</label>
+                    <input type="text" name="valami2" id="valami2" placeholder="4-12 character" />
+                    <small class="helper-text"></small>
+                </div>
+    
+                <div class="input-group">
+                    <label for="username">Valami3</label>
+                    <input type="text" name="valami3" id="valami3" placeholder="4-12 character" />
+                    <small class="helper-text"></small>
+                </div>
+    
+                <input type="submit" value="submit">
+            </div>
+        </form>
+    </section>
+</body>
+
+</html>

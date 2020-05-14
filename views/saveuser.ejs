@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <title>000</title>
+</head>
+
+    <div class="container-wp">
+        <div class="container-between">
+            <div>
+
+
+                <h1><% if (typeof user !== 'undefined') { %></h1>
+                <ul>
+                    <li><%= user.username%></li>
+                </ul>
+                <% } %>
+
+                <%if (typeof error !== 'undefined') {%>
+                    <li class="notification <%= error.type %>"><%= error.message %></li>
+                <%}%>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
