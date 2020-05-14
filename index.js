@@ -3,6 +3,9 @@ const bodyParser = require('body-parser');
 const { Pool } = require('pg');
 const app = express();
 
+const expressip = require('express-ip');
+app.use(expressip().getIpInfoMiddleware);
+
 app.set('view engine', 'ejs');
 app.use(express.static('static'));
 app.use(bodyParser.json());
@@ -15,7 +18,7 @@ const pool = new Pool({
 
 
 app.get('/', async function (req, res, next) {
-    ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+    ip = req.ipInfo;
     res.render('index', {ip: ip});
 })
 
