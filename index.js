@@ -16,7 +16,12 @@ const pool = new Pool({
 
 
 app.get('/', async function (req, res, next) {
-    ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+    ip = {
+        headersip: req.headers['x-forwarded-for'],
+        remoteConnAddIp: req.connection.remoteAddress,
+        rekip: req.ip,
+        rekips: req.ips
+    }
     res.render('index', {ip: ip});
 })
 
