@@ -15,7 +15,7 @@ const pool = new Pool({
 
 
 app.get('/', async function (req, res, next) {
-    ip = req.connection.remoteAddress;
+    ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     res.render('index', {ip: ip});
 })
 
