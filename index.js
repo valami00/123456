@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const { Pool } = require('pg');
 const app = express();
 
+app.set('trust proxy', true);
 app.set('view engine', 'ejs');
 app.use(express.static('static'));
 app.use(bodyParser.json());
